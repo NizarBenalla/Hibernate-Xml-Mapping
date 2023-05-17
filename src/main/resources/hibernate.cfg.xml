@@ -18,6 +18,7 @@
         <property name="hbm2ddl.auto">create</property>
 
         <mapping resource="Reunion.hbm.xml"/>
+        <mapping resource="Personne.hbm.xml"/>
 
 
     </session-factory>

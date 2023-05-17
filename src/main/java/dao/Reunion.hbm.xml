@@ -4,7 +4,11 @@
             <generator class="native"></generator>
         </id>
         <property name="titre" column="TITRE"></property>
-        <property name="dateReunion"
-                  column="DATE_REUNION"></property>
+        <property name="dateReunion" column="DATE_REUNION"></property>
+
+        <set name="personnes" table="PERS_REUNIONS" inverse="true">
+            <key column="ID_REUNION"/>
+            <many-to-many column="ID_PERSONNE" class="gest.Personne"/>
+        </set>
     </class>
 </hibernate-mapping>

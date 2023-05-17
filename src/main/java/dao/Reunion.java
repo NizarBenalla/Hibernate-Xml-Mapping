@@ -1,8 +1,17 @@
 package dao;
 import java.util.Date;
+import java.util.HashSet;
+import java.util.Set;
+
 public class Reunion {
     private Long idReunion;
-
+    private Set personnes = new HashSet();
+    public Set getPersonnes() {
+        return personnes;
+    }
+    public void setPersonnes(Set personnes) {
+        this.personnes = personnes;
+    }
     public Long getIdReunion() {
         return idReunion;
     }
