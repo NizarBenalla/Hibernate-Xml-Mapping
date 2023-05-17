@@ -17,8 +17,8 @@
         <property name="show_sql">true</property>
         <property name="hbm2ddl.auto">create</property>
 
-        <mapping resource="Reunion.hbm.xml"/>
-        <mapping resource="Personne.hbm.xml"/>
+        <mapping resource="dao/Reunion.hbm.xml"/>
+        <mapping resource="gest/Personne.hbm.xml"/>
 
 
     </session-factory>

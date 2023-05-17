@@ -1,13 +1,9 @@
 import dao.Reunion;
 import gest.Personne;
 import org.hibernate.Session;
-
 import java.util.Date;
-import java.util.Iterator;
 import java.util.List;
-
 import util.HibernateUtil;
-
 import org.hibernate.query.Query;
 
 
@@ -67,6 +63,8 @@ public class ReunionManager {
         gestManager.addReunion(new Reunion("conseil", new Date()));
         gestManager.addReunion(new Reunion("Compte rendue", new Date()));
         gestManager.addReunion(new Reunion("délibération", new Date()));
+
+
         gestManager.addPersonne("Jihad", "hassan", 25);
         gestManager.addPersonne("mandari", "Youness", 22);
         gestManager.addPersonne("Karimi", " yassine", 23);
@@ -76,10 +74,10 @@ public class ReunionManager {
         gestManager.addReunionToPersonne(new Long(3), new Long(1));
         gestManager.addReunionToPersonne(new Long(1), new Long(2));
         gestManager.addReunionToPersonne(new Long(3), new Long(2));
+
         List listR = gestManager.listReunions();
-        Iterator lesR = listR.iterator();
-        while (lesR.hasNext()) {
-            Reunion r = (Reunion) lesR.next();
+        for (Object o : listR) {
+            Reunion r = (Reunion) o;
             System.out.println(r.getIdReunion() + "--" + r.getTitreReunion() + "--" + r.getDateReunion());
         }
         HibernateUtil.getSessionFactory().close();
